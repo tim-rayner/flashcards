@@ -1,6 +1,6 @@
 import { StudySession } from '../domain/StudySession'
 import type { StudySessionRepository } from '../domain/StudySessionRepository'
-import { DeckId } from '../../decks/domain/DeckId'
+import { DeckId } from '@/decks/domain/DeckId'
 
 export class GetSessionsForDeck {
   private readonly repo: StudySessionRepository

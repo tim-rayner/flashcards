@@ -1,8 +1,8 @@
 import { StudySession } from '../domain/StudySession'
 import { SessionId } from '../domain/SessionId'
 import type { StudySessionRepository } from '../domain/StudySessionRepository'
-import type { DeckRepository } from '../../decks/domain/DeckRepository'
-import { CardId } from '../../decks/domain/CardId'
+import type { DeckRepository } from '@/decks/domain/DeckRepository'
+import { CardId } from '@/decks/domain/CardId'
 import type { ResultValue } from '../domain/CardResult'
 
 export class RecordCardResult {

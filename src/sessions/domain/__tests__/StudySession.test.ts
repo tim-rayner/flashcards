@@ -2,8 +2,8 @@ import { describe, it, expect } from 'vitest'
 import { StudySession } from '../StudySession'
 import { SessionId } from '../SessionId'
 import { CardResult } from '../CardResult'
-import { DeckId } from '../../../decks/domain/DeckId'
-import { CardId } from '../../../decks/domain/CardId'
+import { DeckId } from '@/decks/domain/DeckId'
+import { CardId } from '@/decks/domain/CardId'
 
 describe('StudySession', () => {
   const sessionId = new SessionId('session-1')

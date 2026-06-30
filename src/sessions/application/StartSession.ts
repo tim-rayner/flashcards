@@ -2,7 +2,7 @@ import { v4 as uuidv4 } from 'uuid'
 import { StudySession } from '../domain/StudySession'
 import { SessionId } from '../domain/SessionId'
 import type { StudySessionRepository } from '../domain/StudySessionRepository'
-import { DeckId } from '../../decks/domain/DeckId'
+import { DeckId } from '@/decks/domain/DeckId'
 
 export class StartSession {
   private readonly repo: StudySessionRepository

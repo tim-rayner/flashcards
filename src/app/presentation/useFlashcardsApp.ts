@@ -1,11 +1,11 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { flashcardsApp } from '../application/FlashcardsApp'
-import { Deck } from '../../decks/domain/Deck'
-import { Card } from '../../decks/domain/Card'
-import { CardId } from '../../decks/domain/CardId'
-import { DeckId } from '../../decks/domain/DeckId'
-import { SessionId } from '../../sessions/domain/SessionId'
-import { StudySession } from '../../sessions/domain/StudySession'
+import { Deck } from '@/decks/domain/Deck'
+import { Card } from '@/decks/domain/Card'
+import { CardId } from '@/decks/domain/CardId'
+import { DeckId } from '@/decks/domain/DeckId'
+import { SessionId } from '@/sessions/domain/SessionId'
+import { StudySession } from '@/sessions/domain/StudySession'
 
 export function useFlashcardsApp() {
   const [decks, setDecks] = useState<Deck[]>([])

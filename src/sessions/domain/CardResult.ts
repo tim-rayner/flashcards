@@ -1,4 +1,4 @@
-import type { CardId } from '../../decks/domain/CardId'
+import type { CardId } from '@/decks/domain/CardId'
 
 export type ResultValue = 'correct' | 'incorrect'
 

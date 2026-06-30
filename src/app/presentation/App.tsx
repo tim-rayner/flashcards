@@ -1,9 +1,9 @@
 import { Box, CssBaseline, ThemeProvider, CircularProgress, Typography, useMediaQuery } from '@mui/material'
-import { theme } from '../../shared/presentation/theme'
+import { theme } from '@/shared/presentation/theme'
 import { useFlashcardsApp } from './useFlashcardsApp'
 import { MobileLayout, DesktopLayout } from './AppLayout'
-import { StudySessionView } from '../../sessions/presentation/StudySessionView'
-import { SessionHistory } from '../../sessions/presentation/SessionHistory'
+import { StudySessionView } from '@/sessions/presentation/StudySessionView'
+import { SessionHistory } from '@/sessions/presentation/SessionHistory'
 
 export default function App() {
   const isMobile = useMediaQuery(theme.breakpoints.down('md'))

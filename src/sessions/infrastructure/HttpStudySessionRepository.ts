@@ -2,9 +2,9 @@ import { StudySession } from '../domain/StudySession'
 import { SessionId } from '../domain/SessionId'
 import type { StudySessionRepository } from '../domain/StudySessionRepository'
 import { CardResult } from '../domain/CardResult'
-import { DeckId } from '../../decks/domain/DeckId'
-import { CardId } from '../../decks/domain/CardId'
-import { ApiClient, type AppData } from '../../shared/infrastructure/ApiClient'
+import { DeckId } from '@/decks/domain/DeckId'
+import { CardId } from '@/decks/domain/CardId'
+import { ApiClient, type AppData } from '@/shared/infrastructure/ApiClient'
 
 export class HttpStudySessionRepository implements StudySessionRepository {
   private readonly api: ApiClient

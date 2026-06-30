@@ -1,5 +1,5 @@
-import type { DeckId } from '../../decks/domain/DeckId'
-import type { CardId } from '../../decks/domain/CardId'
+import type { DeckId } from '@/decks/domain/DeckId'
+import type { CardId } from '@/decks/domain/CardId'
 import { CardResult, type ResultValue } from './CardResult'
 import type { SessionId } from './SessionId'
 

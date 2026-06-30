@@ -1,10 +1,10 @@
 import { Box, Typography } from '@mui/material'
 import SchoolIcon from '@mui/icons-material/School'
-import { Deck } from '../../decks/domain/Deck'
-import { CardId } from '../../decks/domain/CardId'
-import { Card } from '../../decks/domain/Card'
-import { DeckList } from '../../decks/presentation/DeckList'
-import { DeckDetail } from '../../decks/presentation/DeckDetail'
+import { Deck } from '@/decks/domain/Deck'
+import { CardId } from '@/decks/domain/CardId'
+import { Card } from '@/decks/domain/Card'
+import { DeckList } from '@/decks/presentation/DeckList'
+import { DeckDetail } from '@/decks/presentation/DeckDetail'
 
 interface DeckListProps {
   decks: Deck[]

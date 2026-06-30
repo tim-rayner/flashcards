@@ -3,7 +3,7 @@ import { DeckId } from '../domain/DeckId'
 import { Card } from '../domain/Card'
 import { CardId } from '../domain/CardId'
 import type { DeckRepository } from '../domain/DeckRepository'
-import { ApiClient, type AppData } from '../../shared/infrastructure/ApiClient'
+import { ApiClient, type AppData } from '@/shared/infrastructure/ApiClient'
 
 export class HttpDeckRepository implements DeckRepository {
   private readonly api: ApiClient
