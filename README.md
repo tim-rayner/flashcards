@@ -1,77 +1,57 @@
-# React + TypeScript + Vite
+# Flashcards
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive flashcard learning app built with React, MUI, and a local Express server. Follows DDD clean architecture with bounded contexts and SOLID principles.
 
-Currently, two official plugins are available:
+## Getting started locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### 1. Install dependencies
 
-## React Compiler
-
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
-
-Note: This will impact Vite dev & build performances.
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Create your local data file
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+The app reads and writes to `flashcards-data.json` in the project root. This file is **gitignored** (your data stays local). Create it before running:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+echo '{"decks":[],"sessions":[]}' > flashcards-data.json
+```
+
+### 3. Start the app
+
+```bash
+npm run dev
+```
+
+This starts both the Vite frontend (http://localhost:5173) and the Express API server (http://localhost:3001) concurrently.
+
+## Architecture
 
 ```
+src/
+├── decks/               # Decks bounded context
+│   ├── domain/          # Deck, Card, DeckId, CardId, DeckRepository (interface)
+│   ├── application/     # Use cases: CreateDeck, AddCard, DeleteCard, etc.
+│   ├── infrastructure/  # HttpDeckRepository — only file that knows about the API
+│   └── presentation/    # React/MUI components
+├── sessions/            # Study sessions bounded context
+│   ├── domain/          # StudySession, CardResult, SessionId, StudySessionRepository
+│   ├── application/     # Use cases: StartSession, RecordCardResult, CompleteSession
+│   ├── infrastructure/  # HttpStudySessionRepository — only file that knows about the API
+│   └── presentation/    # React/MUI components
+└── shared/
+    └── infrastructure/  # ApiClient — wraps fetch, knows the server URL
+```
+
+**Swapping the backend:** replace `HttpDeckRepository`, `HttpStudySessionRepository`, and `ApiClient`. Domain and application layers are untouched.
+
+## Running tests
+
+```bash
+npm test          # run once
+npm run test:watch  # watch mode
+npm run test:ui     # vitest UI
+```
+
+Tests cover all domain logic and use cases using in-memory repository fakes.

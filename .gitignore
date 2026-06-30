@@ -1,3 +1,6 @@
+# Local flashcard data (create your own - see README)
+flashcards-data.json
+
 # Logs
 logs
 *.log
