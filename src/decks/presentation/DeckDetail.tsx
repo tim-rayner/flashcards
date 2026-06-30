@@ -474,6 +474,7 @@ export function DeckDetail({
             rows={3}
             value={question}
             onChange={(e) => setQuestion(e.target.value)}
+            sx={{ mt: 2 }}
           />
           <TextField
             fullWidth
@@ -514,7 +515,7 @@ export function DeckDetail({
       >
         <DialogTitle>Edit Card</DialogTitle>
         <DialogContent
-          sx={{ display: "flex", flexDirection: "column", gap: 2, pt: 2 }}
+          sx={{ display: "flex", flexDirection: "column", gap: 2, pt: 4 }}
         >
           <TextField
             autoFocus
@@ -524,6 +525,7 @@ export function DeckDetail({
             rows={3}
             value={question}
             onChange={(e) => setQuestion(e.target.value)}
+            sx={{ mt: 2 }}
           />
           <TextField
             fullWidth
