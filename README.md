@@ -1,3 +1,5 @@
+<img width="602" height="410" alt="image" src="https://github.com/user-attachments/assets/7bb27d28-0c34-4d73-ba19-3493b73b056a" />
+
 # Flashcards
 
 An interactive flashcard learning app built with React, MUI, and a local Express server. Follows DDD clean architecture.
