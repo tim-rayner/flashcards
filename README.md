@@ -30,6 +30,9 @@ This starts both the Vite frontend (http://localhost:5173) and the Express API s
 
 ```
 src/
+├── app/                 # Application shell — composes bounded contexts
+│   ├── application/     # FlashcardsApp facade wiring all use cases
+│   └── presentation/    # App, layouts, useFlashcardsApp hook
 ├── decks/               # Decks bounded context
 │   ├── domain/          # Deck, Card, DeckId, CardId, DeckRepository (interface)
 │   ├── application/     # Use cases: CreateDeck, AddCard, DeleteCard, etc.
@@ -41,7 +44,8 @@ src/
 │   ├── infrastructure/  # HttpStudySessionRepository — only file that knows about the API
 │   └── presentation/    # React/MUI components
 └── shared/
-    └── infrastructure/  # ApiClient — wraps fetch, knows the server URL
+    ├── infrastructure/  # ApiClient — wraps fetch, knows the server URL
+    └── presentation/    # theme, shared UI tokens
 ```
 
 **Swapping the backend:** replace `HttpDeckRepository`, `HttpStudySessionRepository`, and `ApiClient`. Domain and application layers are untouched.

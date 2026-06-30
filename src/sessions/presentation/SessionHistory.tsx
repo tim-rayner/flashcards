@@ -7,7 +7,7 @@ import CancelIcon from '@mui/icons-material/Cancel'
 import AccessTimeIcon from '@mui/icons-material/AccessTime'
 import { alpha } from '@mui/material/styles'
 import { StudySession } from '../domain/StudySession'
-import { EMERALD, CORAL, GOLD, SURFACE_HIGH } from '../../theme'
+import { EMERALD, CORAL, GOLD, SURFACE_HIGH } from '../../shared/presentation/theme'
 
 interface Props {
   open: boolean

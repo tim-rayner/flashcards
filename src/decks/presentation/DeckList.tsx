@@ -9,7 +9,7 @@ import EditIcon from '@mui/icons-material/Edit'
 import AddIcon from '@mui/icons-material/Add'
 import { alpha } from '@mui/material/styles'
 import { Deck } from '../domain/Deck'
-import { CORAL } from '../../theme'
+import { CORAL } from '../../shared/presentation/theme'
 
 interface Props {
   decks: Deck[]

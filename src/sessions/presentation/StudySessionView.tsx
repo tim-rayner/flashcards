@@ -11,7 +11,7 @@ import EmojiEventsIcon from '@mui/icons-material/EmojiEvents'
 import { alpha } from '@mui/material/styles'
 import { Deck } from '../../decks/domain/Deck'
 import { Card } from '../../decks/domain/Card'
-import { CORAL, GOLD, EMERALD, ROSE, SURFACE_HIGH } from '../../theme'
+import { CORAL, GOLD, EMERALD, ROSE, SURFACE_HIGH } from '../../shared/presentation/theme'
 
 interface Props {
   open: boolean

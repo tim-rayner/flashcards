@@ -14,7 +14,7 @@ import { alpha } from '@mui/material/styles'
 import { Deck } from '../domain/Deck'
 import { Card } from '../domain/Card'
 import { CardId } from '../domain/CardId'
-import { CORAL, SURFACE_HIGH } from '../../theme'
+import { CORAL, SURFACE_HIGH } from '../../shared/presentation/theme'
 
 type CardFilter = 'correct' | 'incorrect' | 'new'
 
