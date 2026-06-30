@@ -1,6 +1,6 @@
 # Flashcards
 
-An interactive flashcard learning app built with React, MUI, and a local Express server. Follows DDD clean architecture with bounded contexts and SOLID principles.
+An interactive flashcard learning app built with React, MUI, and a local Express server. Follows DDD clean architecture.
 
 ## Getting started locally
 
@@ -10,12 +10,12 @@ An interactive flashcard learning app built with React, MUI, and a local Express
 npm install
 ```
 
-### 2. Create your local data file
+### 2. Generate local data file
 
 The app reads and writes to `flashcards-data.json` in the project root. This file is **gitignored** (your data stays local). Create it before running:
 
-```bash
-echo '{"decks":[],"sessions":[]}' > flashcards-data.json
+```base
+npm run generate-data
 ```
 
 ### 3. Start the app
@@ -24,7 +24,7 @@ echo '{"decks":[],"sessions":[]}' > flashcards-data.json
 npm run dev
 ```
 
-This starts both the Vite frontend (http://localhost:5173) and the Express API server (http://localhost:3001) concurrently.
+This starts both the Vite frontend (http://localhost:5173) and the Express file system API server (http://localhost:3001) concurrently.
 
 ## Architecture
 
@@ -59,3 +59,9 @@ npm run test:ui     # vitest UI
 ```
 
 Tests cover all domain logic and use cases using in-memory repository fakes.
+
+## General Notes from Tim
+
+I built this as a quick and easy app to help me prepare for job interviews; hence why the infrastructure is kinda bootstrapped with a local Express API handling local file read/writes. I chose to go this way for quickness, but still wanted an oppurtunity to express (pardon the pun) my interest in DDD and Clean Architecture in the frontend.
+
+I'm thinking of building a mobile app to offer and make more accessible to a wider audience. TBC.
