@@ -11,7 +11,8 @@
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:ui": "vitest --ui"
+    "test:ui": "vitest --ui",
+    "generate-data": "echo '{\"decks\":[],\"sessions\":[]}' > flashcards-data.json"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
