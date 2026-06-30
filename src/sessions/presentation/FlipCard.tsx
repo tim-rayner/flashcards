@@ -96,6 +96,13 @@ export function FlipCard({
             gap: 1,
           }}
         >
+          <Typography
+            variant="subtitle2"
+            color="text.secondary"
+            sx={{ fontWeight: 500, lineHeight: 1.4 }}
+          >
+            {question}
+          </Typography>
           <Typography variant="overline" sx={{ color: CORAL }}>
             Answer
           </Typography>
